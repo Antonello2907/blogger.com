@@ -1,4 +1,5 @@
 
+
 <b:section class='sidebar_bottom' id='sidebar_bottom' name='Sidebar (Bottom)' preferred='yes'>
 
 <!-- WIDGET PROGETTI 2025 -->
@@ -83,37 +84,24 @@
 </b:includable>
 </b:widget>
 
-<b:widget id='Label1' locked='false' title='Etichette' type='Label' visible='true'>
-<b:widget-settings>
-<b:widget-setting name='sorting'>ALPHA</b:widget-setting>
-<b:widget-setting name='display'>LIST</b:widget-setting>
-<b:widget-setting name='selectedLabelsList'/>
-<b:widget-setting name='showType'>ALL</b:widget-setting>
-<b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
-</b:widget-settings>
-<b:includable id='main'>
-<details class='collapsible extendable'>
-<b:attr cond='data:view.isLabelSearch' name='open' value='open'/>
-<b:with value='true' var='renderAsDetails'>
-<b:with value='data:messages.labels' var='defaultTitle'>
-<b:include name='super.main'/>
-</b:with>
-</b:with>
-</details>
-</b:includable>
-<b:includable id='cloud'>
-<b:include data='{ buttonClass: &quot;pill-button&quot;, items: data:this.labels, itemSet: &quot;labels&quot;, itemsMarkup: &quot;super.cloud&quot; }' name='extendableItems'/>
-</b:includable>
-<b:includable id='content'>
-<div class='widget-content'>
-<b:class expr:name='data:this.display + &quot;-label-widget-content&quot;'/>
-<b:include cond='data:this.display == &quot;list&quot;' name='list'/>
-<b:include cond='data:this.display == &quot;cloud&quot;' name='cloud'/>
-</div>
-</b:includable>
-<b:includable id='list'>
-<b:include data='{ buttonClass: &quot;pill-button&quot;, items: data:this.labels, itemSet: &quot;labels&quot;, itemsMarkup: &quot;super.list&quot; }' name='extendableItems'/>
-</b:includable>
+<!-- WIDGET PROGETTI 2025 -->
+<b:widget id='HTML99' locked='false' title='I Miei Progetti 2025' type='HTML'>
+  <b:widget-settings>
+    <b:widget-setting name='content'><![CDATA[<div style="background: #f8f9fa; border-radius: 10px; padding: 15px; text-align: center; margin: 10px 0; border-left: 4px solid #3498db;">
+  <h4 style="margin: 0 0 10px 0; color: #2c3e50;">I Miei Progetti</h4>
+  <p style="margin: 10px 0; color: #666; font-size: 0.9em;">Scopri le mie iniziative innovative</p>
+  <button style="background: #3498db; color: white; border: none; padding: 8px 16px; border-radius: 15px; cursor: pointer;"
+          onclick="window.open('https://antonello2907.github.io/Your-Message-Here/', '_blank')">
+    Vai ai Progetti
+  </button>
+</div>]]></b:widget-setting>
+  </b:widget-settings>
+  <b:includable id='main'>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <data:content/>
+  </b:includable>
 </b:widget>
 
 <b:widget id='ReportAbuse1' locked='true' title='' type='ReportAbuse' visible='true'>
@@ -121,6 +109,5 @@
 <b:include name='reportAbuse'/>
 </b:includable>
 </b:widget>
-
 
 </b:section>
